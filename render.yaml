@@ -66,7 +66,7 @@ services:
       - key: QUEUES
         value: "celery"
       - key: WORKERS_COUNT
-        value: 1
+        value: 10
 
   - type: worker
     name: redash-worker
@@ -89,6 +89,8 @@ services:
       - fromGroup: redash-mail
       - key: QUEUES
         value: "queries,scheduled_queries,schemas"
+      - key: WORKERS_COUNT
+        value: 10
 
   - type: pserv
     name: redash-redis
