@@ -66,7 +66,7 @@ services:
       - key: QUEUES
         value: "celery"
       - key: WORKERS_COUNT
-        value: 10
+        value: 5
 
   - type: worker
     name: redash-worker
@@ -90,7 +90,7 @@ services:
       - key: QUEUES
         value: "queries,scheduled_queries,schemas"
       - key: WORKERS_COUNT
-        value: 10
+        value: 5
 
   - type: pserv
     name: redash-redis
